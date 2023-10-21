@@ -1,0 +1,43 @@
+package XML2;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+import javax.lang.model.type.NoType;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.security.NoTypePermission;
+import com.thoughtworks.xstream.security.NullPermission;
+import com.thoughtworks.xstream.security.PrimitiveTypePermission;
+
+public class XStream3 {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		XStream xs = new XStream();
+		xs.addPermission(NoTypePermission.NONE);
+		xs.addPermission(NullPermission.NULL);
+		xs.addPermission(PrimitiveTypePermission.PRIMITIVES);
+
+		xs.allowTypesByWildcard(new String[] { "XML2.*" });
+		xs.alias("ListaAlumnos", ListaAlumnos.class);
+		xs.alias("Alumno", AlumnoCFGS.class);
+
+		xs.addImplicitCollection(ListaAlumnos.class, "lista");
+		ListaAlumnos listaAlum = new ListaAlumnos();
+		ListaAlumnos listaAlumdef = new ListaAlumnos();
+		
+		
+		FileOutputStream filaFinal = new FileOutputStream("FilasClase.xml", true);
+		
+		for (int i = 1; i < 4; i++) {
+			FileInputStream fis = new FileInputStream("Fila" + i + ".xml");
+			listaAlum = (ListaAlumnos) xs.fromXML(fis);
+//			listaAlumdef.add(listaAlum);
+			xs.toXML(listaAlum, filaFinal);
+		}
+
+	}
+
+}

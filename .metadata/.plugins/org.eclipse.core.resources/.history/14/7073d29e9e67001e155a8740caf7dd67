@@ -1,0 +1,15 @@
+package XML2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaAlumnos {
+	private List<AlumnoCFGS> lista = new ArrayList<AlumnoCFGS>();
+	public ListaAlumnos() {}
+	public void add(AlumnoCFGS a){
+		lista.add(a);
+	}
+	public List<AlumnoCFGS> getListaAlumnos(){
+		return lista;
+	}
+}

@@ -1,0 +1,42 @@
+package XML2;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.thoughtworks.xstream.XStream;
+
+import AlumnosCFGS.AlumnoCFGS;
+
+public class xStream {
+
+	public static void main(String[] args) throws IOException {
+		ListaAlumnos la = new ListaAlumnos();
+
+
+		XStream xstr = new XStream();
+		xstr.alias("ListaObjetos", ListaAlumnos.class);
+		xstr.alias("Alumno", AlumnoCFGS.class);
+
+		
+		la.add(new AlumnoCFGS("Enrique", (byte)19 ,(byte) 1, (float) 1.80 ,false , 0L, "animalX"));
+		
+		la.add(new AlumnoCFGS("Fernando", (byte)27 ,(byte) 1, (float) 1.63 ,false , 9000L, "God Of War"));
+
+		la.add(new AlumnoCFGS("Dudu", (byte)23 ,(byte) 2, (float) 1.750 ,false , 700L, "Skyrim"));
+		
+		la.add(new AlumnoCFGS("Dani", (byte)20 ,(byte) 2, (float) 1.97 ,true , 2500L, "FIFA"));
+		
+		la.add(new AlumnoCFGS("Dichao", (byte)23 ,(byte) 3, (float) 1.82 ,true , 48L, "Overcooked"));
+		
+		la.add(new AlumnoCFGS("Angel", (byte)23 ,(byte) 3, (float) 1.93 ,true , 2355L, "Final Fantasy 4"));
+		
+		
+		xstr.addImplicitCollection(ListaAlumnos.class,"lista");
+		
+		xstr.toXML(la,new FileOutputStream("objetos.xml"));
+
+	}
+}

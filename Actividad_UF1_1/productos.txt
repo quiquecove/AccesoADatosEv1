@@ -1,0 +1,10 @@
+1, Laptop, 15-inch, 999.99
+2, Smartphone, 6-inch, 599.99
+3, Coffee Maker, 12-cup, 49.99
+4, Running Shoes, Size 10, 79.99
+5, Backpack, Large, 39.99
+6, Digital Camera, 24MP, 349.99
+7, Desk Chair, Ergonomic, 149.99
+8, Blender, 500W, 29.99
+9, T-shirt, XL, 14.99
+10, Headphones, Wireless, 79.99

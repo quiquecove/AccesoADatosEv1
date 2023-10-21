@@ -1,0 +1,65 @@
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class VehiculosEj3 {
+    private String modelo;
+    private int anno;
+    private double precio;
+    private static final int RECORD_SIZE = 20; // Adjust the record size as needed
+
+    public VehiculosEj3(String modelo, int anno, double precio) {
+        this.modelo = modelo;
+        this.anno = anno;
+        this.precio = precio;
+    }
+
+    public static void main(String[] args) {
+        try {
+            RandomAccessFile file = new RandomAccessFile("vehiculos.dat", "rw");
+
+            // Write vehicles to the file
+            VehiculosEj3[] vehiculos = new VehiculosEj3[10];
+            vehiculos[0] = new VehiculosEj3("Toyota Corolla", 2022, 25000.0);
+            // Add entries for other vehicles here...
+
+            for (int i = 0; i < vehiculos.length; i++) {
+                file.seek(i * RECORD_SIZE);
+                String modelo = vehiculos[i].getModelo();
+                int anno = vehiculos[i].getAnno();
+                double precio = vehiculos[i].getPrecio();
+                // Write data as bytes into the file
+                file.writeUTF(modelo);
+                file.writeInt(anno);
+                file.writeDouble(precio);
+            }
+
+            // Read vehicles from the file
+            for (int i = 0; i < vehiculos.length; i++) {
+                file.seek(i * RECORD_SIZE);
+                String modelo = file.readUTF();
+                int anno = file.readInt();
+                double precio = file.readDouble();
+                System.out.println("Modelo: " + modelo);
+                System.out.println("Año de Fabricación: " + anno);
+                System.out.println("Precio: " + precio);
+                System.out.println();
+            }
+
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public int getAnno() {
+        return anno;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+}

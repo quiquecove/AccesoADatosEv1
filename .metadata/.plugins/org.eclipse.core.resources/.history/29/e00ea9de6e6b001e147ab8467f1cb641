@@ -1,0 +1,61 @@
+package actividades;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class Ej3 {
+	String modelo;
+	int anno;
+	int precio;
+	public static void main(String[] args) throws IOException {
+		File fl = new File("vehiculos.dat");
+		RandomAccessFile raf = new RandomAccessFile(fl, "rw");
+		
+			raf.seek(0);
+				
+			raf.write(null);
+	
+	
+	
+	}
+
+	
+	public Ej3(String modelo,int anno,int precio) {
+		this.modelo=modelo;
+		this.anno=anno;
+		this.precio=precio;
+	}
+
+
+	public String getModelo() {
+		return modelo;
+	}
+
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+
+	public int getAnno() {
+		return anno;
+	}
+
+
+	public void setAnno(int anno) {
+		this.anno = anno;
+	}
+
+
+	public int getPrecio() {
+		return precio;
+	}
+
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+	
+}

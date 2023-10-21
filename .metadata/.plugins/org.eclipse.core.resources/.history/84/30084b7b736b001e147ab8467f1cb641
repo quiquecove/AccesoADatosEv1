@@ -1,0 +1,78 @@
+package actividades;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Vehiculo implements Serializable {
+    private String modelo;
+    private int anno;
+    private double precio;
+
+    public Vehiculo(String modelo, int anno, double precio) {
+        this.modelo = modelo;
+        this.anno = anno;
+        this.precio = precio;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getAnno() {
+        return anno;
+    }
+
+    public void setAnno(int anno) {
+        this.anno = anno;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public static void main(String[] args) throws IOException, Exception {
+        File fl = new File("vehiculos.dat");
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fl));
+        Vehiculo[] vehiculos = new Vehiculo[10];
+
+        vehiculos[0] = new Vehiculo("Toyota Corolla", 2022, 25000.0);
+        vehiculos[1] = new Vehiculo("Ford F-150", 2023, 35000.0);
+        vehiculos[2] = new Vehiculo("Honda Civic", 2021, 22500.0);
+        vehiculos[3] = new Vehiculo("Chevrolet Silverado", 2022, 28000.0);
+        vehiculos[4] = new Vehiculo("Volkswagen Golf", 2020, 20000.0);
+        vehiculos[5] = new Vehiculo("BMW X5", 2022, 55000.0);
+        vehiculos[6] = new Vehiculo("Nissan Altima", 2021, 24000.0);
+        vehiculos[7] = new Vehiculo("Jeep Wrangler", 2023, 32000.0);
+        vehiculos[8] = new Vehiculo("Hyundai Elantra", 2022, 23500.0);
+        vehiculos[9] = new Vehiculo("Mercedes-Benz C-Class", 2023, 50000.0);
+
+        for (Vehiculo vehiculo : vehiculos) {
+            objectOutputStream.writeObject(vehiculo);
+        }
+        objectOutputStream.close();
+
+        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(fl));
+
+        Vehiculo[] cochesLeidos = (Vehiculo[]) objectInputStream.readObject();
+
+        for (Vehiculo coche : cochesLeidos) {
+            System.out.println("Modelo: " + coche.getModelo());
+            System.out.println("Año de Fabricación: " + coche.anno);
+            System.out.println("Precio: " + coche.precio);
+            System.out.println();
+        }
+    }
+}
