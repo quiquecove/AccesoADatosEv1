@@ -66,8 +66,8 @@ public class prueba {
 //		db.commit();
 //		db.close();
 ////	}
+//	ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
 ////recorrer base de datos
-//		ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
 //		while (os.hasNext()) {
 //
 //			System.out.println(os.next());

@@ -12,17 +12,17 @@ public class prueba {
 	public static void main(String[] args) {
 
 		ObjectContainer db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "alumnos.yap");
-//		db.store(new AlumnoCFGS("Enrique", (byte) 19, (byte) 1, (float) 1.80, false, 0L, "animalX"));
-//
-//		db.store(new AlumnoCFGS("Fernando", (byte) 27, (byte) 1, (float) 1.63, false, 9000L, "God Of War"));
-//
-//		db.store(new AlumnoCFGS("Dudu", (byte) 23, (byte) 2, (float) 1.750, false, 700L, "Skyrim"));
-//
-//		db.store(new AlumnoCFGS("Dani", (byte) 20, (byte) 2, (float) 1.97, true, 2500L, "FIFA"));
-//
-//		db.store(new AlumnoCFGS("Dichao", (byte) 23, (byte) 3, (float) 1.82, true, 48L, "Overcooked"));
-//
-//		db.store(new AlumnoCFGS("Angel", (byte) 23, (byte) 3, (float) 1.93, true, 2355L, "Final Fantasy 4"));
+		db.store(new AlumnoCFGS("Enrique", (byte) 19, (byte) 1, (float) 1.80, false, 0L, "animalX"));
+
+		db.store(new AlumnoCFGS("Fernando", (byte) 27, (byte) 1, (float) 1.63, false, 9000L, "God Of War"));
+
+		db.store(new AlumnoCFGS("Dudu", (byte) 23, (byte) 2, (float) 1.750, false, 700L, "Skyrim"));
+
+		db.store(new AlumnoCFGS("Dani", (byte) 20, (byte) 2, (float) 1.97, true, 2500L, "FIFA"));
+
+		db.store(new AlumnoCFGS("Dichao", (byte) 23, (byte) 3, (float) 1.82, true, 48L, "Overcooked"));
+
+		db.store(new AlumnoCFGS("Angel", (byte) 23, (byte) 3, (float) 1.93, true, 2355L, "Final Fantasy 4"));
 
 
 // borrar
@@ -66,8 +66,8 @@ public class prueba {
 //		db.commit();
 //		db.close();
 ////	}
+//	ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
 ////recorrer base de datos
-//		ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
 //		while (os.hasNext()) {
 //
 //			System.out.println(os.next());

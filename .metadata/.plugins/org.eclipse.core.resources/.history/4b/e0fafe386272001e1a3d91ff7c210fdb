@@ -48,16 +48,16 @@ public class prueba {
 //	}
 		
 //select
-//		ObjectSet<AlumnoCFGS> os2 = db.query(new Predicate<AlumnoCFGS>() {
-//			public boolean match(AlumnoCFGS alumno) {
-//				return alumno.getNoGrupo() == 1;
-//			}
-//		});
-//
-//		while (os2.hasNext()) {
-//			AlumnoCFGS alumno = os2.next();
-//			System.out.println(alumno);
-//		}
+		ObjectSet<AlumnoCFGS> os2 = db.query(new Predicate<AlumnoCFGS>() {
+			public boolean match(AlumnoCFGS alumno) {
+				return alumno.getNoGrupo() == 1;
+			}
+		});
+
+		while (os2.hasNext()) {
+			AlumnoCFGS alumno = os2.next();
+			System.out.println(alumno);
+		}
 		
 //bucle de borrado
 //		while(os.hasNext()) {
@@ -66,8 +66,8 @@ public class prueba {
 //		db.commit();
 //		db.close();
 ////	}
+//	ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
 ////recorrer base de datos
-//		ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
 //		while (os.hasNext()) {
 //
 //			System.out.println(os.next());

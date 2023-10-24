@@ -67,11 +67,11 @@ public class prueba {
 //		db.close();
 ////	}
 ////recorrer base de datos
-//		ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
-//		while (os.hasNext()) {
-//
-//			System.out.println(os.next());
-//		}
+		ObjectSet<AlumnoCFGS> os = db.queryByExample(AlumnoCFGS.class);
+		while (os.hasNext()) {
+
+			System.out.println(os.next());
+		}
 	db.close();
 //}
 //	
