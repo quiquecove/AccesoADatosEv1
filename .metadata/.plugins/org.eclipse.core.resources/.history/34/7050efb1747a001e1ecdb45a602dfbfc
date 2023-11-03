@@ -1,0 +1,17 @@
+package DAO;
+
+public class DaoCrearTabla extends dao1{
+
+	
+	public DaoCrearTabla() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void createTable() {
+		super.createTable();
+		createStatement =connection.prepareStatement("");
+	}
+
+}

@@ -1,0 +1,32 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public class DaoActualizar extends dao1{
+
+	@Override
+	public void modificarRegistro(AlumnoCFGS a) throws SQLException {
+		// TODO Auto-generated method stub
+//		super.modificarRegistro(int id,String nombre,byte edad,byte noGrupo, float altura, boolean juegaConsola, long horasEnLoL,String juegoFavorito);
+		    createStatement = connection.prepareStatement("INSERT INTO TABLAALUMNOS (NOMBRE, EDAD, NOGRUPO, ALTURAPROXENMETROS, JUEGAENCONSOLA, HORASENLOL, JUEGOFAVORITO) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+		    createStatement.setString(1, a.getNombre());
+		    createStatement.setByte(2, a.getEdad());
+		    createStatement.setByte(3, (byte) 2);
+		    createStatement.setFloat(4, 1.75f);
+		    createStatement.setBoolean(5, true);
+		    createStatement.setLong(6, 1000L);
+		    createStatement.setString(7, "League of Legends");
+		    createStatement.executeUpdate();
+	}
+
+		
+		
+
+
+	}
+
+	
+
+	
+}

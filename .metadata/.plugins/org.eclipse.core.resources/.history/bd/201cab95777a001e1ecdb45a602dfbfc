@@ -1,0 +1,13 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public class DaoAddReg extends dao1{
+
+	@Override
+	public void crearRegistro(int id,String nombre,byte edad,byte noGrupo, float altura, boolean juegaConsola, long horasEnLoL,String juegoFavorito) throws SQLException {
+		// TODO Auto-generated method stub
+		super.crearRegistro(int id,String nombre,byte edad,byte noGrupo, float altura, boolean juegaConsola, long horasEnLoL,String juegoFavorito);
+	}
+
+}

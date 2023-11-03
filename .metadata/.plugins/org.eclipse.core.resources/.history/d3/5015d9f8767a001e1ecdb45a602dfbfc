@@ -1,0 +1,18 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public class DaoConsultas extends dao1{
+
+	@Override
+	public void consulta() throws SQLException{
+		super.consulta();
+		    // Aquí debes realizar una consulta a la tabla TABLAALUMNOS
+		    // y recuperar los datos que necesitas. Puedes usar una sentencia SELECT
+		    // para ello.
+
+		    createStatement = connection.prepareStatement("SELECT * FROM TABLAALUMNOS");
+		    resultSet = createStatement.executeQuery();
+	}
+
+}

@@ -1,0 +1,37 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public class DaoConsultas extends dao1 {
+
+	@Override
+	public void consulta(AlumnoCFGS a) throws SQLException {
+		//super.consulta(id, juegoFavorito, noGrupo, noGrupo, altura, juegaConsola, horasEnLoL, juegoFavorito);
+		createStatement = connection.prepareStatement("SELECT * FROM TABLAALUMNOS WHERE NOMBRE=?,AND EDAD=?,AND NOGRUPO=?,AND alturaAproxEnMetros=?,AND juegaEnConsola=?,AND horasEnElLOL=?,AND juegoFavorito=?");
+		resultSet = createStatement.executeQuery();
+
+		while (resultSet.next()) {
+			createStatement.setString(1, a.getNombre());
+			createStatement.setByte(2, a.getEdad());
+			byte noGrupo = resultSet.getByte(a.getNoGrupo());
+			float altura = resultSet.get(a.getAlturaAproxEnMetros());
+			boolean juegaConsola = resultSet.getBoolean(a.juegaEnConsola);
+			long horasEnLoL = resultSet.getLong("HORASENLOL");
+			juegoFavorito = resultSet.getString("JUEGOFAVORITO");
+
+			// Realiza acciones con los datos recuperados, por ejemplo, imprimirlos
+			System.out.println("ID: " + id);
+			System.out.println("Nombre: " + nombre);
+			System.out.println("Edad: " + edad);
+			System.out.println("Grupo: " + noGrupo);
+			System.out.println("Altura: " + altura);
+			System.out.println("Juega en consola: " + juegaConsola);
+			System.out.println("Horas en LoL: " + horasEnLoL);
+			System.out.println("Juego favorito: " + juegoFavorito);
+		}
+
+		// Cierra el resultSet después de usarlo
+		resultSet.close();
+	}
+
+}

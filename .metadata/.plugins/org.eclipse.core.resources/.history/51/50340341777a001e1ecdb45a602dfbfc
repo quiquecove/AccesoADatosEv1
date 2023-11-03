@@ -1,0 +1,12 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public interface daoInterfaz {
+	
+	public void createTable()throws SQLException;
+	public void crearRegistro()throws SQLException;
+	public void consulta(int id,String nombre,byte edad,byte noGrupo, float altura, boolean juegaConsola, long horasEnLoL,String juegoFavorito)throws SQLException;
+	public void modificarRegistro(int id,String nombre,byte edad,byte noGrupo, float altura, boolean juegaConsola, long horasEnLoL,String juegoFavorito) throws SQLException;
+	public void borrarRegistro()throws SQLException;
+}

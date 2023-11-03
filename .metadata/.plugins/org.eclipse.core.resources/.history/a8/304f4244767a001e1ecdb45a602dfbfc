@@ -1,0 +1,11 @@
+package DAO;
+
+public class DaoConsultas extends dao1{
+
+	@Override
+	public void consulta() {
+		// TODO Auto-generated method stub
+		super.consulta();
+	}
+
+}

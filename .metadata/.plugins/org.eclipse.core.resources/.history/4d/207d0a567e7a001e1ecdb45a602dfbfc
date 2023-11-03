@@ -1,0 +1,13 @@
+package DAO;
+
+public class DaoBorrar extends dao1 {
+
+	@Override
+	public void borrarRegistro(AlumnoCFGS a) {
+		// TODO Auto-generated method stub
+
+	
+	}
+
+	
+}

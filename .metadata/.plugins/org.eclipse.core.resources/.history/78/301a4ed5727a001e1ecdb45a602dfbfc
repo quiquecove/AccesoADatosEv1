@@ -1,0 +1,38 @@
+package DAO;
+
+public class DaoActualizar extends dao1 implements daoInterfaz{
+
+	@Override
+	public void createTable() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void crearRegistro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void consulta() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modificarRegistro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void borrarRegistro() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+}

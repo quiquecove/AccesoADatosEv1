@@ -1,0 +1,10 @@
+package DAO;
+
+public interface daoInterfaz {
+	
+	public void createTable();
+	public void crearRegistro();
+	public void consulta();
+	public void modificarRegistro();
+	public void borrarRegistro();
+}

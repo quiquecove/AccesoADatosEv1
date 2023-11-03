@@ -4,6 +4,8 @@ import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 
+import DAO.AlumnoCFGS;
+
 public class aumentarEdad {
 
     public static void main(String[] args) {

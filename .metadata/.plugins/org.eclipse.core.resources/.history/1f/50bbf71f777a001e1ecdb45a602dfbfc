@@ -1,0 +1,38 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public class DaoConsultas extends dao1{
+
+	@Override
+	public void consulta(int id,String nombre,byte edad,byte noGrupo, float altura, boolean juegaConsola, long horasEnLoL,String juegoFavorito) throws SQLException {
+	    super.consulta();
+	    createStatement = connection.prepareStatement("SELECT * FROM TABLAALUMNOS");
+	    resultSet = createStatement.executeQuery();
+
+	    while (resultSet.next()) {
+	        int id = resultSet.getInt("ID");
+	        String nombre = resultSet.getString("NOMBRE");
+	        byte edad = resultSet.getByte("EDAD");
+	        byte noGrupo = resultSet.getByte("NOGRUPO");
+	        float altura = resultSet.getFloat("ALTURAPROXENMETROS");
+	        boolean juegaConsola = resultSet.getBoolean("JUEGAENCONSOLA");
+	        long horasEnLoL = resultSet.getLong("HORASENLOL");
+	        String juegoFavorito = resultSet.getString("JUEGOFAVORITO");
+
+	        // Realiza acciones con los datos recuperados, por ejemplo, imprimirlos
+	        System.out.println("ID: " + id);
+	        System.out.println("Nombre: " + nombre);
+	        System.out.println("Edad: " + edad);
+	        System.out.println("Grupo: " + noGrupo);
+	        System.out.println("Altura: " + altura);
+	        System.out.println("Juega en consola: " + juegaConsola);
+	        System.out.println("Horas en LoL: " + horasEnLoL);
+	        System.out.println("Juego favorito: " + juegoFavorito);
+	    }
+
+	    // Cierra el resultSet después de usarlo
+	    resultSet.close();
+	}
+
+}

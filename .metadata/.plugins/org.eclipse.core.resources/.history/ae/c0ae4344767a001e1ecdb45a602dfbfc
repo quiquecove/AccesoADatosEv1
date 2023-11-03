@@ -1,0 +1,17 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public class DaoActualizar extends dao1{
+
+	@Override
+	public void modificarRegistro() throws SQLException {
+		// TODO Auto-generated method stub
+		super.modificarRegistro();
+		createStatement=connection.prepareStatement("");
+	}
+
+	
+
+	
+}

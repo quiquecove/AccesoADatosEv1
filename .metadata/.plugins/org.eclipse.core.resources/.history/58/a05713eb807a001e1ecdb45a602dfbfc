@@ -1,0 +1,12 @@
+package DAO;
+
+public class Main_test {
+	public static void main(String[] args) {
+		
+		dao1 jdbcTest = new dao1();
+		AlumnoCFGS alumno=new AlumnoCFGS("Enrique", (byte) 19, (byte) 1, (float) 1.80, true, 0L, "animalX");
+		AlumnoCFGS alumno2=new AlumnoCFGS("Fer", (byte) 19, (byte) 1, (float) 1.60, false, 0L, "lal");
+
+	}
+
+}

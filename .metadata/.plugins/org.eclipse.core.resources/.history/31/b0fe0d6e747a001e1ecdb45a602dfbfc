@@ -1,0 +1,15 @@
+package DAO;
+
+public class DaoActualizar extends dao1{
+
+	@Override
+	public void modificarRegistro() {
+		// TODO Auto-generated method stub
+		super.modificarRegistro();
+		
+	}
+
+	
+
+	
+}

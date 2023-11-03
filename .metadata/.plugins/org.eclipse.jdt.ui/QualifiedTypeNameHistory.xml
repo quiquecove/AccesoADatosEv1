@@ -9,11 +9,9 @@
     <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
     <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
     <fullyQualifiedTypeName name="javax.swing.text.Document"/>
-    <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
     <fullyQualifiedTypeName name="javax.xml.transform.Result"/>
     <fullyQualifiedTypeName name="javax.xml.transform.TransformerFactory"/>
     <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
-    <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
     <fullyQualifiedTypeName name="com.thoughtworks.xstream.security.NoTypePermission"/>
     <fullyQualifiedTypeName name="com.thoughtworks.xstream.security.NullPermission"/>
     <fullyQualifiedTypeName name="com.thoughtworks.xstream.security.PrimitiveTypePermission"/>
@@ -31,4 +29,10 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+    <fullyQualifiedTypeName name="com.db4o.ObjectContainer"/>
+    <fullyQualifiedTypeName name="com.db4o.Db4oEmbedded"/>
+    <fullyQualifiedTypeName name="javax.management.Query"/>
+    <fullyQualifiedTypeName name="com.db4o.query.Query"/>
 </qualifiedTypeNameHistroy>

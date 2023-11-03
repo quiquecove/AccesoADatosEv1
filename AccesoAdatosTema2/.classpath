@@ -7,5 +7,30 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="db4o-8.0.184.15484.jar"/>
+	<classpathentry kind="lib" path="derby.jar"/>
+	<classpathentry kind="lib" path="derbyclient.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_cs.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_de_DE.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_es.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_fr.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_hu.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_it.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_ja_JP.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_ko_KR.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_pl.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_pt_BR.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_ru.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_zh_CN.jar"/>
+	<classpathentry kind="lib" path="derbyLocale_zh_TW.jar"/>
+	<classpathentry kind="lib" path="derbynet.jar"/>
+	<classpathentry kind="lib" path="derbyoptionaltools.jar"/>
+	<classpathentry kind="lib" path="derbyrun.jar"/>
+	<classpathentry kind="lib" path="derbyshared.jar"/>
+	<classpathentry kind="lib" path="derbytools.jar"/>
+	<classpathentry kind="lib" path="hsqldb.jar"/>
+	<classpathentry kind="lib" path="hsqldb-osgi-jdk8.jar"/>
+	<classpathentry kind="lib" path="sqltool.jar"/>
+	<classpathentry kind="lib" path="sqltool-jdk8.jar"/>
+	<classpathentry kind="lib" path="h2-2.2.224.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

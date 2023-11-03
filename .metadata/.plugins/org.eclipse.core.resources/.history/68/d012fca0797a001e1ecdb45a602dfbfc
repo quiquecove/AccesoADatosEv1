@@ -1,0 +1,51 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class dao1 implements daoInterfaz {
+	
+	protected Connection connection;
+	protected PreparedStatement createStatement; 
+	protected ResultSet resultSet;
+	public  void init() throws SQLException {
+		
+		 connection = DriverManager.getConnection("jdbc:hsqldb:pruebas");
+		
+	}
+
+	@Override
+	public void createTable() throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void crearRegistro(AlumnoCFGS a) throws SQLException{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void consulta(AlumnoCFGS a) throws SQLException{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modificarRegistro(AlumnoCFGS a) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void borrarRegistro(int id,String nombre,byte edad,byte noGrupo, float altura, boolean juegaConsola, long horasEnLoL,String juegoFavorito)throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

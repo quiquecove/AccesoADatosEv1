@@ -1,0 +1,49 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class MiHombreSanti {
+
+    private static final String[] nombres = { "Pedro Sánchez", "Alberto Núñez Feijóo", "Santiago Abascal", "Yolanda Díaz" };
+    private static final int[] edades = { 50, 60, 45, 45 }; // Debes definir las edades
+    private static final String[] estudios = { "Licenciatura", "Licenciatura", "Licenciatura", "Doctorado" }; // Debes definir los estudios
+
+    public static void main(String[] args) throws SQLException {
+        // Crea una conexión a la base de datos HSQLDB
+        Connection connection = DriverManager.getConnection("jdbc:hsqldb:lider_partidos");
+
+        // Crea la tabla LideresPartidos
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(
+                "CREATE TABLE LideresPartidos (nombre VARCHAR(255) PRIMARY KEY, edad INTEGER, estudios VARCHAR(255))");
+
+        // Comprueba que la tabla se creó correctamente
+        ResultSet rs = statement.executeQuery("SELECT COUNT(*) FROM LideresPartidos");
+        rs.next();
+        int count = rs.getInt(1);
+        if (count != 4) {
+            throw new SQLException("Error al crear la tabla LideresPartidos");
+        }
+
+        // Inserta las cuatro tuplas en la tabla
+        for (int i = 0; i < 4; i++) {
+            statement.executeUpdate("INSERT INTO LideresPartidos (nombre, edad, estudios) VALUES ('" + nombres[i]
+                    + "', " + edades[i] + ", '" + estudios[i] + "')");
+        }
+
+        // Comprueba que las tuplas se insertaron correctamente
+        for (int i = 0; i < 4; i++) {
+            rs = statement.executeQuery("SELECT * FROM LideresPartidos WHERE nombre = '" + nombres[i] + "'");
+            if (!rs.next()) {
+                throw new SQLException("Error al insertar la tupla " + i);
+            }
+        }
+
+        // Cierra la conexión a la base de datos
+        connection.close();
+    }
+}
