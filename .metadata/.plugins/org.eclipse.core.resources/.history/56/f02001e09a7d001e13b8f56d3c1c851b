@@ -1,0 +1,28 @@
+package DAO;
+
+import java.sql.SQLException;
+
+public class Main_test {
+	public static void main(String[] args) throws SQLException {
+
+		dao1 jdbcTest = new dao1();
+		AlumnoCFGS alumno = new AlumnoCFGS("Enrique", (byte) 19, (byte) 1, (float) 1.80, true, 0L, "animalX");
+		AlumnoCFGS alumno2 = new AlumnoCFGS("Fer", (byte) 19, (byte) 1, (float) 1.60, false, 0L, "lal");
+		AlumnoCFGS alumno3 = new AlumnoCFGS("nacho", (byte) 21, (byte) 1, (float) 1.60, false, 0L, "lal");
+
+		jdbcTest.init();
+		DaoCrearTabla crearTabla = new DaoCrearTabla();
+		crearTabla.createTable();
+		DaoAddReg add = new DaoAddReg();
+		add.crearRegistro(alumno);
+		add.crearRegistro(alumno2);
+		add.crearRegistro(alumno3);
+
+		DaoConsultas consulta = new DaoConsultas();
+		consulta.consulta(alumno);
+		DaoBorrar borrado= new DaoBorrar();
+		borrado.borrarRegistro(alumno3);
+
+	}
+
+}

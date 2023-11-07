@@ -35,4 +35,10 @@
     <fullyQualifiedTypeName name="com.db4o.Db4oEmbedded"/>
     <fullyQualifiedTypeName name="javax.management.Query"/>
     <fullyQualifiedTypeName name="com.db4o.query.Query"/>
+    <fullyQualifiedTypeName name="DAO.dao1"/>
+    <fullyQualifiedTypeName name="DAO.daoInterfaz"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="DAO.AlumnoCFGS"/>
+    <fullyQualifiedTypeName name="DAO.DaoCrearTabla"/>
+    <fullyQualifiedTypeName name="DAO.DaoAddReg"/>
 </qualifiedTypeNameHistroy>
